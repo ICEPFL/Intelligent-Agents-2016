@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<history configuration="config/reactive.xml">
+	<agents>
+		<agent name="reactive-random">
+			<vehicle name="Reactive-Random Vehicle 1 - random"/>
+		</agent>
+		<agent name="reactive1">
+			<vehicle name="Vehicle 2 - trained, gamma = 0"/>
+		</agent>
+		<agent name="reactive-rla">
+			<vehicle name="reative-rla Vehicle 3 - trained, gamma = 0.95"/>
+		</agent>
+	</agents>
+	<rounds>
+		<round id="1">
+			<tasks>
+				<task id="0" pickup="Marseille" delivery="Bordeaux" weight="3" reward="66042"/>
+				<task id="1" pickup="Genève" delivery="Strasbourg" weight="3" reward="83601"/>
+				<task id="2" pickup="Le Havre" delivery="Brest" weight="3" reward="56409"/>
+				<task id="3" pickup="Paris" delivery="Lyon" weight="3" reward="78340"/>
+				<task id="4" pickup="Marseille" delivery="Bordeaux" weight="3" reward="66042"/>
+				<task id="5" pickup="Le Havre" delivery="Monaco" weight="3" reward="27987"/>
+				<task id="6" pickup="Marseille" delivery="Bordeaux" weight="3" reward="66042"/>
+				<task id="7" pickup="Strasbourg" delivery="Monaco" weight="3" reward="48005"/>
+				<task id="8" pickup="Paris" delivery="Le Havre" weight="3" reward="96787"/>
+				<task id="9" pickup="Bordeaux" delivery="Lyon" weight="3" reward="70005"/>
+			</tasks>
+			<events>
+				<event id="0" time="0" vehicle="Reactive-Random Vehicle 1 - random" move="Le Havre"/>
+				<event id="1" time="0" vehicle="Vehicle 2 - trained, gamma = 0" pickup="0"/>
+				<event id="2" time="0" vehicle="reative-rla Vehicle 3 - trained, gamma = 0.95" move="Paris"/>
+				<event id="3" time="299999991" vehicle="Vehicle 2 - trained, gamma = 0" move="Genève"/>
+				<event id="4" time="890909060" vehicle="Reactive-Random Vehicle 1 - random" move="Paris"/>
+				<event id="5" time="977272691" vehicle="Vehicle 2 - trained, gamma = 0" move="Strasbourg"/>
+				<event id="6" time="1781818113" vehicle="Reactive-Random Vehicle 1 - random" move="Strasbourg"/>
+				<event id="7" time="2686363529" vehicle="reative-rla Vehicle 3 - trained, gamma = 0.95" pickup="0"/>
+				<event id="8" time="2745454434" vehicle="Vehicle 2 - trained, gamma = 0" deliver="0"/>
+				<event id="9" time="2986363515" vehicle="reative-rla Vehicle 3 - trained, gamma = 0.95" move="Lyon"/>
+				<event id="10" time="3045454421" vehicle="Vehicle 2 - trained, gamma = 0" pickup="0"/>
+				<event id="11" time="3345454407" vehicle="Vehicle 2 - trained, gamma = 0" move="Paris"/>
+				<event id="12" time="3995454384" vehicle="Reactive-Random Vehicle 1 - random" pickup="0"/>
+				<event id="13" time="4295454372" vehicle="Reactive-Random Vehicle 1 - random" move="Genève"/>
+				<event id="14" time="5104545250" vehicle="reative-rla Vehicle 3 - trained, gamma = 0.95" move="Marseille"/>
+			</events>
+		</round>
+	</rounds>
+	<statistics>
+		<stat rank="1" agent="reactive1">
+			<total-tasks value="1"/>
+			<total-distance value="1025.0"/>
+			<total-cost value="5125"/>
+			<total-reward value="73421"/>
+			<total-profit value="68296"/>
+		</stat>
+		<stat rank="2" agent="reactive-random">
+			<total-tasks value="1"/>
+			<total-distance value="1268.0"/>
+			<total-cost value="6340"/>
+			<total-reward value="0"/>
+			<total-profit value="-6340"/>
+		</stat>
+		<stat rank="3" agent="reactive-rla">
+			<total-tasks value="1"/>
+			<total-distance value="1373.0"/>
+			<total-cost value="6865"/>
+			<total-reward value="0"/>
+			<total-profit value="-6865"/>
+		</stat>
+	</statistics>
+</history>
